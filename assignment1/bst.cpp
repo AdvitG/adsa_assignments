@@ -41,6 +41,15 @@ class node{
         }
     }
 
+    void inorderTraversal(node* root)
+{
+    if (root != nullptr) {
+        inorderTraversal(root->left);
+        cout << root->data << " ";
+        inorderTraversal(root->right);
+    }
+}
+
     node* findmax(node* root){
         if(root->right==nullptr){
             return root;
