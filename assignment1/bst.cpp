@@ -22,7 +22,32 @@ class node{
         if(root==nullptr){
             
             return creat_node(a);}
+        if(root->data>a){
+            root->left= insert(root->left,a);
+        }
+        if(root->data<a){
+            root->right= insert(root->right,a);
+        }
+        return root;
 
+    }
+
+    node* findmin(node* root){
+        if(root->left==nullptr){
+            return root;
+        }
+        else{
+            findmin(root->left);
+        }
+    }
+
+    node* findmax(node* root){
+        if(root->right==nullptr){
+            return root;
+        }
+        else{
+            findmax(root->right);
+        }
     }
 
 
